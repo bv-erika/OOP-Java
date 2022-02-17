@@ -22,7 +22,7 @@ public class Euler {
 	
 		double e = 0;
 		for(int n = 0; n < 10; n++) {
-			e += (double)1/fact(n);
+			e += (double)1/fact(n); //explicit típuskonverzió
 		}
 
 		System.out.println("e = " + e);
