@@ -46,8 +46,10 @@ public class StringArray {
 
 	static int countIdenticals(String[] array) {
 		int counter = 0;
+		//A tömb elemeiből párokat képezünk ismétlődés nélkül
 		for(int i = 0; i < array.length-1; i++) {
 			for(int j = i+1; j < array.length; j++) {
+				//Sztringek összehasonlítása
 				if (array[i].equals(array[j])) {
 					counter++;
 				}
@@ -58,8 +60,10 @@ public class StringArray {
 	
 	static int countSameCredentials(String[] array) {
 		int counter = 0;
+		//A tömb elemeiből párokat képezünk ismétlődés nélkül
 		for(int i = 0; i < array.length-1; i++) {
 			for(int j = i+1; j < array.length; j++) {
+				//A sztringek első karakterének összehasonlítása
 				if (array[i].charAt(0) == array[j].charAt(0)) {
 					counter++;
 				}
