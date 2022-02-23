@@ -8,7 +8,7 @@ public class Calculator {
 	
 		Scanner sc = new Scanner(System.in);
 		
-		//Második verzió...: input string felbontása
+		//Második verzió: input string felbontása
 		boolean ok;
 		do {
 			ok = true;
