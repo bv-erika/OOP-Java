@@ -25,7 +25,7 @@ public class Euler {
 			e += (double)1/fact(n); // explicit típuskonverzió
 		}
 
-		System.out.println("e = " + e);
+		System.out.println("e : " + e);
 	}
 	
 	/**
