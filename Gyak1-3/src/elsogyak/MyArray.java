@@ -1,5 +1,6 @@
 package elsogyak;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class MyArray {
@@ -18,6 +19,15 @@ public class MyArray {
 		}
 		
 		printArray(myArray);
+		//növekvő rendezés
+		Arrays.sort(myArray);
+		printArray(myArray);
+		
+		//bináris keresés
+		System.out.println("Searchkey: ");
+		int key = readInt();
+		System.out.println("Result: " + Arrays.binarySearch(myArray, key));
+		
 		System.out.println("Átlag: " + avgArray(myArray));
 		
 		int[] selected = selectArray(myArray);
@@ -39,15 +49,14 @@ public class MyArray {
 			n = input.nextInt();
 		} while(n < 1 || n > 10);
 		
-		input.close();
-		
 		return n;
 	}
 	
 	static void printArray(int[] array) {
 		for (int item : array) {
-			System.out.println(item);
+			System.out.print(item + ", ");
 		}
+		System.out.println();
 	}
 	
 	static double avgArray(int[] array) {
