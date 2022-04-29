@@ -3,19 +3,19 @@ package base;
 import java.time.LocalDate;
 
 public class Card {
-	public enum Bank { OTP, ERSTE, KANDH, CIB }
+	public enum Bank {OTP, KANDH, ERSTE, CIB} 
 	
 	private String owner;
 	private LocalDate validity;
+	private Bank bank;
 	private int balance;
-	private Bank cardbank;
 	
-	public Card(String owner, LocalDate validity, int balance, Bank cardbank) {
+	public Card(String owner, LocalDate validity, Bank bank, int balance) {
 		super();
 		this.owner = owner;
 		this.validity = validity;
+		this.bank = bank;
 		this.balance = balance;
-		this.cardbank = cardbank;
 	}
 
 	public int getBalance() {
@@ -34,29 +34,28 @@ public class Card {
 		return validity;
 	}
 
-	public Bank getCardbank() {
-		return cardbank;
+	public Bank getBank() {
+		return bank;
 	}
 
 	@Override
 	public String toString() {
-		return "Card [owner=" + owner + ", validity=" + validity + ", balance=" + balance + ", cardbank=" + cardbank
-				+ "]";
+		return "Card [owner=" + owner + ", validity=" + validity + ", bank=" + bank + ", balance=" + balance + "]";
 	}
 	
 	public boolean withdraw(int amount) {
-		if (!this.validity.isBefore(LocalDate.now())) {
-			if (this.balance >= amount ) {
-				this.balance -= amount;
+		if (!validity.isBefore(LocalDate.now())) {
+			if (balance >= amount) {
+				balance -= amount;
 				return true;
 			}
 			else {
 				return false;
 			}
+		}	
+		else {
+			return false;
 		}
-		return false;
 	}
-	
-	
-	
+
 }
